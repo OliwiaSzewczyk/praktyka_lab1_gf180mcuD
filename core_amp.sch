@@ -82,8 +82,9 @@ C {opin.sym} 130 1540 0 0 {name=p9 lab=OUT}
 C {iopin.sym} 130 1560 0 0 {name=p6 lab=VDD}
 C {iopin.sym} 130 1580 0 0 {name=p7 lab=GND}
 C {symbols/ppolyf_u_1k.sym} 300 1450 0 0 {name=R1
-W=2e-6
-L=3e-6
+W=1e-6
+L=1.05e-6
 model=ppolyf_u_1k
 spiceprefix=X
-m=10}
+m=7
+}

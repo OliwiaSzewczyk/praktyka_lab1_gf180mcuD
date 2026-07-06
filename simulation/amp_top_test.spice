@@ -1,0 +1,92 @@
+** sch_path: /foss/designs/amp_top_test.sch
+**.subckt amp_top_test
+x1 IN OUT VDD 0 amp_top
+V1 VDD 0 1.8
+V2 IN 0 vin
+* noconn OUT
+**** begin user architecture code
+
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice  typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice  res_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+
+.control
+  ac dec 50 10 100MEG
+  plot vdb(out)
+  meas ac kv_v_per_v max mag(v(out))
+  meas ac kv_db max vdb(out)
+  let target = kv_db - 3
+  meas ac fd find frequency when vdb(out)=target rise=1
+  meas ac fg find frequency when vdb(out)=target fall=1
+
+.endc
+.save all
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  amp_top.sym # of pins=4
+** sym_path: /foss/designs/amp_top.sym
+** sch_path: /foss/designs/amp_top.sch
+.subckt amp_top IN OUT VDD GND
+*.ipin IN
+*.opin OUT
+*.iopin VDD
+*.iopin GND
+x1 GND OUT cap_output
+x3 IN net1 VDD GND filter_input
+x2 net1 OUT VDD GND core_amp
+.ends
+
+
+* expanding   symbol:  cap_output.sym # of pins=2
+** sym_path: /foss/designs/cap_output.sym
+** sch_path: /foss/designs/cap_output.sch
+.subckt cap_output IN_OUT GND
+*.iopin IN_OUT
+*.iopin GND
+XC1 IN_OUT GND cap_mim_2f0fF c_width=10e-6 c_length=7.5e-6
+.ends
+
+
+* expanding   symbol:  filter_input.sym # of pins=4
+** sym_path: /foss/designs/filter_input.sym
+** sch_path: /foss/designs/filter_input.sch
+.subckt filter_input IN OUT VDD GND
+*.ipin IN
+*.opin OUT
+*.iopin VDD
+*.iopin GND
+XC1 OUT IN cap_mim_2f0fF c_width=31.62e-6 c_length=31.62e-6
+XR2_1 OUT net2 VDD ppolyf_u_1k r_width=0.18e-6 r_length=19.11e-6
+XR1_1 net1 OUT VDD ppolyf_u_1k r_width=0.18e-6 r_length=19.11e-6
+XR1_2 GND net1 VDD ppolyf_u_1k r_width=0.18e-6 r_length=19.11e-6
+XR2_2 net2 net3 VDD ppolyf_u_1k r_width=0.18e-6 r_length=19.11e-6
+XR2_3 net3 net4 VDD ppolyf_u_1k r_width=0.18e-6 r_length=19.11e-6
+XR2_4 net4 net5 VDD ppolyf_u_1k r_width=0.18e-6 r_length=19.11e-6
+XR2_5 net5 net6 VDD ppolyf_u_1k r_width=0.18e-6 r_length=19.11e-6
+XR2_6 net6 VDD VDD ppolyf_u_1k r_width=0.18e-6 r_length=19.11e-6
+.ends
+
+
+* expanding   symbol:  core_amp.sym # of pins=4
+** sym_path: /foss/designs/core_amp.sym
+** sch_path: /foss/designs/core_amp.sch
+.subckt core_amp IN OUT VDD GND
+*.ipin IN
+*.opin OUT
+*.iopin VDD
+*.iopin GND
+XM1 OUT IN GND GND nfet_03v3 L=0.28u W=10u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM2 OUT net1 VDD VDD pfet_03v3 L=2.5u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XM3 net1 net1 VDD VDD pfet_03v3 L=2.5u W=1u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0
+XR1 GND net1 VDD ppolyf_u_1k r_width=1e-6 r_length=1.05e-6 m=7
+.ends
+
+.end
