@@ -36,10 +36,18 @@ value=
 	plot v(out)
 	plot abs(deriv(v(out)))
 	plot -i(v1)
-	ac dec 50 10 100MEG
-  	plot vdb(out)
-	write plot.raw
 
+  ac dec 50 10 1G
+  plot vdb(out)
+ 
+  meas ac kv_v_v max vm(out)
+  meas ac kv_db max vdb(out)
+  
+  let target = kv_db - 3
+
+  meas ac fd WHEN vdb(out)=$&target RISE=1
+  meas ac fg WHEN vdb(out)=$&target FALL=1
+write plot.raw
 .endc
 .save all
 "
