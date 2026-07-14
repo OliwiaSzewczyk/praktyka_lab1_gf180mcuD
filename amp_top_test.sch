@@ -25,7 +25,7 @@ C {lab_wire.sym} 230 -10 0 1 {name=p5 sig_type=std_logic lab=OUT}
 C {lab_wire.sym} 80 -100 0 0 {name=p3 sig_type=std_logic lab=VDD}
 C {gnd.sym} 80 70 0 0 {name=l2 lab=0}
 C {lab_wire.sym} -70 -50 0 0 {name=p6 sig_type=std_logic lab=IN}
-C {code_shown.sym} -310 120 0 0 {name=dc only_toplevel=false 
+C {code_shown.sym} -130 120 0 0 {name=dc only_toplevel=false 
 value=
 "
 .include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
