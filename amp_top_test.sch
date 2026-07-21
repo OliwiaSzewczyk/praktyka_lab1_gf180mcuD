@@ -35,7 +35,7 @@ value=
 .lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice  mimcap_typical
 
 .control
-  ac dec 50 10 1G
+  ac dec 50 10 2G
   plot vdb(out)
  
   meas ac kv_v_v max vm(out)
