@@ -48,7 +48,6 @@ N -20 -0 -20 20 {lab=IN}
 N 170 10 170 40 {lab=OUT}
 C {core_amp.sym} 80 0 0 0 {name=x1}
 C {vsource.sym} -170 30 0 0 {name=V1 value=1.8 savecurrent=false}
-C {vsource.sym} -110 30 0 0 {name=V2 value="0.58 AC 1"  savecurrent=false}
 C {gnd.sym} 80 80 0 0 {name=l2 lab=0}
 C {gnd.sym} -140 90 0 0 {name=l3 lab=0}
 C {lab_wire.sym} 80 -80 0 0 {name=p3 sig_type=std_logic lab=VDD}
@@ -57,7 +56,7 @@ C {lab_wire.sym} -110 -30 0 0 {name=p2 sig_type=std_logic lab=IN}
 C {lab_wire.sym} -20 20 0 0 {name=p4 sig_type=std_logic lab=IN}
 C {lab_wire.sym} 170 30 0 0 {name=p5 sig_type=std_logic lab=OUT}
 C {noconn.sym} 170 40 0 0 {name=l1}
-C {code_shown.sym} 260 -130 0 0 {name=dc only_toplevel=false 
+C {code_shown.sym} 260 -130 0 0 {name=simulations only_toplevel=false 
 value=
 "
 .include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
@@ -90,3 +89,4 @@ value=
 "
 
 }
+C {vsource.sym} -110 30 0 0 {name=V2 value="0.58 AC 1" savecurrent=false}

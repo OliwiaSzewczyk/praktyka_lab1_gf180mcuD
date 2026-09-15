@@ -3,7 +3,7 @@
  <description/>
  <original-file/>
  <generator>drc: script='/foss/pdks/ciel/gf180mcu/versions/b344c97eacc2aaf8e14ae7e43e2e9dc0871de2c0/gf180mcuD/libs.tech/klayout/tech/drc/gf180mcu.drc'</generator>
- <top-cell>filter_input</top-cell>
+ <top-cell>TOP</top-cell>
  <tags>
  </tags>
  <categories>
@@ -1052,6 +1052,12 @@
    </categories>
   </category>
   <category>
+   <name>DBU</name>
+   <description>DBU : The design database unit must be 0.001</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
    <name>contact_OFFGRID</name>
    <description>OFFGRID : OFFGRID vertex on contact</description>
    <categories>
@@ -1586,6 +1592,13 @@
    </categories>
   </category>
   <category>
+   <name>PL.8</name>
+   <description>PL.8 : Poly2 coverage over the entire die shall be 14%.
+                  Dummy poly2 lines must be added to meet the minimum poly2 density requirement. : 14%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
    <name>M1.4</name>
    <description>M1.4 : Metal1 coverage over the entire die shall be &gt;30%
                   (Refer to section 13.0 for Dummy Metal fill guidelines.
@@ -1606,6 +1619,30 @@
    <description>M3.4 : metal3 coverage over the entire die shall be &gt;30%
                       (Refer to section 13.0 for Dummy Metal fill guidelines.
                       Customer needs to ensure enough dummy metal to satisfy metal3 coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>M4.4</name>
+   <description>M4.4 : metal4 coverage over the entire die shall be &gt;30%
+                      (Refer to section 13.0 for Dummy Metal fill guidelines.
+                      Customer needs to ensure enough dummy metal to satisfy metal4 coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>M5.4</name>
+   <description>M5.4 : metal5 coverage over the entire die shall be &gt;30%
+                      (Refer to section 13.0 for Dummy Metal fill guidelines.
+                      Customer needs to ensure enough dummy metal to satisfy metal5 coverage) : 30%</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>MT.3</name>
+   <description>MT.3 : MetalTop coverage over the entire die shall be &gt;30%
+                                  (Refer to section 10.3 for Dummy Metal-fill guidelines.
+                                  Customer needs to ensure enough dummy metal to satisfy Metaln coverage) : 30%</description>
    <categories>
    </categories>
   </category>
@@ -4728,48 +4765,131 @@
  </categories>
  <cells>
   <cell>
-   <name>filter_input</name>
+   <name>TOP</name>
    <variant/>
    <layout-name/>
    <references>
+   </references>
+  </cell>
+  <cell>
+   <name>ppolyf_u_resistor</name>
+   <variant/>
+   <layout-name>ppolyf_u_resistor</layout-name>
+   <references>
+    <ref>
+     <parent>TOP</parent>
+     <trans>r270 *1 14.405,15.025</trans>
+    </ref>
    </references>
   </cell>
  </cells>
  <items>
   <item>
    <tags/>
-   <category>'M1.4'</category>
-   <cell>filter_input</cell>
+   <category>DBU</category>
+   <cell>TOP</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.3,0.35;-0.3,65.785;34.65,65.785;34.65,0.35)</value>
+    <value>polygon: (12.61,11.675;12.61,17.585;17.2,17.585;17.2,11.675)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'PL.8'</category>
+   <cell>TOP</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (12.61,11.675;12.61,17.585;17.2,17.585;17.2,11.675)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.4'</category>
+   <cell>TOP</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (12.61,11.675;12.61,17.585;17.2,17.585;17.2,11.675)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>filter_input</cell>
+   <cell>TOP</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.3,0.35;-0.3,65.785;34.65,65.785;34.65,0.35)</value>
+    <value>polygon: (12.61,11.675;12.61,17.585;17.2,17.585;17.2,11.675)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>filter_input</cell>
+   <cell>TOP</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.3,0.35;-0.3,65.785;34.65,65.785;34.65,0.35)</value>
+    <value>polygon: (12.61,11.675;12.61,17.585;17.2,17.585;17.2,11.675)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M4.4'</category>
+   <cell>TOP</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (12.61,11.675;12.61,17.585;17.2,17.585;17.2,11.675)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M5.4'</category>
+   <cell>TOP</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (12.61,11.675;12.61,17.585;17.2,17.585;17.2,11.675)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'MT.3'</category>
+   <cell>TOP</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (12.61,11.675;12.61,17.585;17.2,17.585;17.2,11.675)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'DN.3'</category>
+   <cell>ppolyf_u_resistor</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (-2.56,-1.795;-2.56,2.795;3.35,2.795;3.35,-1.795)</value>
    </values>
   </item>
  </items>

@@ -1,0 +1,15 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 15/09/2026 22:38
+
+* cell filter_input
+* pin $1.top
+* pin GND
+* pin OUT
+* pin VDD
+.SUBCKT filter_input \$1.top GND OUT VDD
+* device instance $1 r180 *1 17.175,62.87 ppolyf_u
+R$1 OUT VDD VDD 129654 ppolyf_u L=370.44U W=1U
+* device instance $5 r180 *1 16.79,16.76 cap_mim_2f0fF
+C$5 OUT \$1.top 1.9996488e-12 cap_mim_2f0fF A=999.8244P P=126.48U
+* device instance $7 r0 *1 17.175,45.71 ppolyf_u
+R$7 GND OUT VDD 64827 ppolyf_u L=185.22U W=1U
+.ENDS filter_input

@@ -1,0 +1,36 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 15/09/2026 19:01
+
+* cell amp_top
+* pin GND
+* pin IN_OUT,OUT
+* pin VDD
+* pin bot
+* pin top
+.SUBCKT amp_top GND IN_OUT|OUT VDD bot top
+* cell instance $1 m90 *1 43.91,13.63
+X$1 GND cap_output
+* device instance $1 r0 *1 41.12,40.78 pfet_03v3
+M$1 VDD \$1648 IN_OUT|OUT VDD pfet_03v3 L=2.5U W=1U AS=0.65P AD=0.65P PS=3.3U
++ PD=3.3U
+* device instance $2 r0 *1 38.5,40.78 pfet_03v3
+M$2 VDD \$1648 \$1648 VDD pfet_03v3 L=2.5U W=1U AS=0.65P AD=0.65P PS=3.3U
++ PD=3.3U
+* device instance $3 r0 *1 40.735,31.945 nfet_03v3
+M$3 IN_OUT|OUT bot GND GND nfet_03v3 L=0.28U W=10U AS=6.1P AD=6.1P PS=21.22U
++ PD=21.22U
+* device instance $4 r0 *1 17.175,64.43 ppolyf_u
+R$4 bot VDD VDD 129654 ppolyf_u L=370.44U W=1U
+* device instance $13 r0 *1 36.17,38.255 ppolyf_u
+R$13 GND \$1648 VDD 367.5 ppolyf_u L=1.05U W=1U
+* device instance $16 r0 *1 17.175,45.71 ppolyf_u
+R$16 GND bot VDD 64827 ppolyf_u L=185.22U W=1U
+* device instance $23 r0 *1 16.79,16.76 cap_mim_2f0fF
+C$23 bot top 1.9996488e-12 cap_mim_2f0fF A=999.8244P P=126.48U
+.ENDS amp_top
+
+* cell cap_output
+* pin GND
+.SUBCKT cap_output GND
+* device instance $1 r0 *1 5.21,5.89 cap_mim_2f0fF
+C$1 GND \$2 1.5e-13 cap_mim_2f0fF A=75P P=35U
+.ENDS cap_output

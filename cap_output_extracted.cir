@@ -1,0 +1,8 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 15/09/2026 18:59
+
+* cell cap_output
+* pin GND
+.SUBCKT cap_output GND
+* device instance $1 r0 *1 5.21,5.89 cap_mim_2f0fF
+C$1 GND \$2 1.5e-13 cap_mim_2f0fF A=75P P=35U
+.ENDS cap_output

@@ -1,0 +1,19 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 10/09/2026 19:13
+
+* cell core_amp
+* pin B,GND
+* pin B,VDD
+* pin G
+* pin G,IN
+* pin OUT
+.SUBCKT core_amp B|GND B|VDD G G|IN OUT
+* device instance $1 r0 *1 4.08,17.93 pfet_03v3
+M$1 B|VDD G G B|VDD pfet_03v3 L=2.5U W=1U AS=0.65P AD=0.65P PS=3.3U PD=3.3U
+* device instance $2 r0 *1 1.46,17.93 pfet_03v3
+M$2 B|VDD G OUT B|VDD pfet_03v3 L=2.5U W=1U AS=0.65P AD=0.65P PS=3.3U PD=3.3U
+* device instance $3 r0 *1 1.845,9.095 nfet_03v3
+M$3 B|GND G|IN OUT B|GND nfet_03v3 L=0.28U W=10U AS=6.1P AD=6.1P PS=21.22U
++ PD=21.22U
+* device instance $4 r0 *1 6.41,15.405 ppolyf_u
+R$4 B|GND G B|VDD 367.5 ppolyf_u L=1.05U W=1U
+.ENDS core_amp

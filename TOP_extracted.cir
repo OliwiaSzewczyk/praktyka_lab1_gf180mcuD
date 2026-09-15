@@ -1,0 +1,81 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 06/08/2026 16:04
+
+* cell TEXT
+.SUBCKT TEXT
+.ENDS TEXT
+
+* cell TOP
+.SUBCKT TOP
+* cell instance $1 r180 *1 32.6,32.57
+X$1 OUT cap_mim
+* cell instance $2 r180 *1 32.61,47.77
+X$2 OUT \$21 VDD ppolyf_u_resistor
+* cell instance $3 r0 *1 1.74,45.21
+X$3 \$14 OUT VDD ppolyf_u_resistor
+* cell instance $4 r180 *1 32.61,38.41
+X$4 GND \$4 VDD ppolyf_u_resistor
+* cell instance $5 r0 *1 1.74,38.97
+X$5 \$4 \$10 VDD ppolyf_u_resistor
+* cell instance $6 r180 *1 32.61,41.53
+X$6 \$10 \$9 VDD ppolyf_u_resistor
+* cell instance $7 r0 *1 1.74,42.09
+X$7 \$9 \$15 VDD ppolyf_u_resistor
+* cell instance $8 r180 *1 32.61,44.65
+X$8 \$15 \$14 VDD ppolyf_u_resistor
+* cell instance $9 r0 *1 1.74,48.33
+X$9 \$21 \$25 VDD ppolyf_u_resistor
+* cell instance $10 r180 *1 32.61,50.89
+X$10 \$25 \$29 VDD ppolyf_u_resistor
+* cell instance $11 r0 *1 1.74,51.45
+X$11 \$29 \$31 VDD ppolyf_u_resistor
+* cell instance $12 r180 *1 32.61,54.01
+X$12 \$31 \$35 VDD ppolyf_u_resistor
+* cell instance $13 r0 *1 1.74,54.57
+X$13 \$35 \$37 VDD ppolyf_u_resistor
+* cell instance $14 r180 *1 32.61,57.13
+X$14 \$37 \$39 VDD ppolyf_u_resistor
+* cell instance $15 r0 *1 1.74,57.69
+X$15 \$39 \$43 VDD ppolyf_u_resistor
+* cell instance $16 r180 *1 32.61,60.25
+X$16 \$43 \$47 VDD ppolyf_u_resistor
+* cell instance $17 r0 *1 1.74,60.81
+X$17 \$47 \$48 VDD ppolyf_u_resistor$3
+* cell instance $18 r180 *1 32.61,63.37
+X$18 \$48 \$51 VDD ppolyf_u_resistor$2
+* cell instance $19 r0 *1 1.74,63.93
+X$19 \$51 VDD VDD ppolyf_u_resistor$2
+.ENDS TOP
+
+* cell ppolyf_u_resistor$2
+* pin 
+* pin 
+* pin 
+.SUBCKT ppolyf_u_resistor$2 \$1 \$2 \$4
+* device instance $1 r0 *1 15.435,0.5 ppolyf_u
+R$1 \$1 \$2 \$4 10804.5 ppolyf_u L=30.87U W=1U
+.ENDS ppolyf_u_resistor$2
+
+* cell ppolyf_u_resistor$3
+* pin 0
+* pin 1
+* pin S
+.SUBCKT ppolyf_u_resistor$3 0 1 S
+* device instance $1 r0 *1 15.435,0.5 ppolyf_u
+R$1 0 1 S 10804.5 ppolyf_u L=30.87U W=1U
+.ENDS ppolyf_u_resistor$3
+
+* cell cap_mim
+* pin bot
+.SUBCKT cap_mim bot
+* device instance $1 r0 *1 15.81,15.81 cap_mim_2f0fF
+C$1 bot top 1.9996488e-12 cap_mim_2f0fF A=999.8244P P=126.48U
+.ENDS cap_mim
+
+* cell ppolyf_u_resistor
+* pin 
+* pin 
+* pin 
+.SUBCKT ppolyf_u_resistor \$1 \$2 \$5
+* device instance $1 r0 *1 15.435,0.5 ppolyf_u
+R$1 \$1 \$2 \$5 10804.5 ppolyf_u L=30.87U W=1U
+.ENDS ppolyf_u_resistor

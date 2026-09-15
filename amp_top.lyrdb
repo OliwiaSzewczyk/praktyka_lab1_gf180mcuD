@@ -3,7 +3,7 @@
  <description/>
  <original-file/>
  <generator>drc: script='/foss/pdks/ciel/gf180mcu/versions/b344c97eacc2aaf8e14ae7e43e2e9dc0871de2c0/gf180mcuD/libs.tech/klayout/tech/drc/gf180mcu.drc'</generator>
- <top-cell>filter_input</top-cell>
+ <top-cell>amp_top</top-cell>
  <tags>
  </tags>
  <categories>
@@ -1048,6 +1048,12 @@
   <category>
    <name>mdiode_ACUTE</name>
    <description>ACUTE : non 45 degree angle mdiode</description>
+   <categories>
+   </categories>
+  </category>
+  <category>
+   <name>DBU</name>
+   <description>DBU : The design database unit must be 0.001</description>
    <categories>
    </categories>
   </category>
@@ -4728,48 +4734,155 @@
  </categories>
  <cells>
   <cell>
-   <name>filter_input</name>
+   <name>amp_top</name>
    <variant/>
    <layout-name/>
    <references>
+   </references>
+  </cell>
+  <cell>
+   <name>cap_output</name>
+   <variant/>
+   <layout-name>cap_output</layout-name>
+   <references>
+    <ref>
+     <parent>amp_top</parent>
+     <trans>m90 *1 43.91,13.63</trans>
+    </ref>
    </references>
   </cell>
  </cells>
  <items>
   <item>
    <tags/>
-   <category>'M1.4'</category>
-   <cell>filter_input</cell>
+   <category>'V1.1'</category>
+   <cell>amp_top</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.3,0.35;-0.3,65.785;34.65,65.785;34.65,0.35)</value>
+    <value>edge: (41.42,36.135;41.42,35.87)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'V1.1'</category>
+   <cell>amp_top</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge: (41.165,35.87;41.165,36.135)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'V1.1'</category>
+   <cell>amp_top</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge: (41.165,36.135;41.42,36.135)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'V1.1'</category>
+   <cell>amp_top</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge: (41.42,35.87;41.165,35.87)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'V1.2a'</category>
+   <cell>amp_top</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (41.165,35.625;41.425,35.625)|(41.42,35.87;41.165,35.87)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>DBU</category>
+   <cell>amp_top</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (-0.49,0.35;-0.49,66.03;43.05,66.03;43.05,0.35)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.4'</category>
+   <cell>amp_top</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (-0.49,0.35;-0.49,66.03;43.05,66.03;43.05,0.35)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>filter_input</cell>
+   <cell>amp_top</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.3,0.35;-0.3,65.785;34.65,65.785;34.65,0.35)</value>
+    <value>polygon: (-0.49,0.35;-0.49,66.03;43.05,66.03;43.05,0.35)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>filter_input</cell>
+   <cell>amp_top</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.3,0.35;-0.3,65.785;34.65,65.785;34.65,0.35)</value>
+    <value>polygon: (-0.49,0.35;-0.49,66.03;43.05,66.03;43.05,0.35)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'MIMTM.1'</category>
+   <cell>amp_top</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (33.2,25.465;33.2,13.575)/(34.35,13.92;34.35,25.12)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'MIMTM.1'</category>
+   <cell>cap_output</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (9.56,11.49;9.56,0.29)/(10.71,-0.055;10.71,11.835)</value>
    </values>
   </item>
  </items>

@@ -8,8 +8,6 @@ E {}
 T {} 300 1330 0 0 0.4 0.4 {}
 N 300 1280 300 1420 {lab=#net1}
 N 300 1180 300 1220 {lab=VDD}
-N 240 1450 280 1450 {lab=VDD}
-N 240 1180 240 1450 {lab=VDD}
 N 240 1180 300 1180 {lab=VDD}
 N 240 1250 260 1250 {lab=VDD}
 N 300 1180 580 1180 {lab=VDD}
@@ -31,6 +29,9 @@ N 370 1250 370 1300 {lab=#net1}
 N 300 1300 370 1300 {lab=#net1}
 N 420 1420 470 1420 {lab=IN}
 N 510 1180 510 1220 {lab=VDD}
+N 240 1180 240 1250 {lab=VDD}
+N 240 1250 240 1450 {lab=VDD}
+N 240 1450 280 1450 {lab=VDD}
 C {symbols/nfet_03v3.sym} 490 1420 0 0 {name=M1
 L=0.28u
 W=10u
@@ -84,7 +85,7 @@ C {iopin.sym} 130 1580 0 0 {name=p7 lab=GND}
 C {symbols/ppolyf_u_1k.sym} 300 1450 0 0 {name=Rbias
 W=1e-6
 L=1.05e-6
-model=ppolyf_u_1k
+model=ppolyf_u
 spiceprefix=X
 m=7
 }
